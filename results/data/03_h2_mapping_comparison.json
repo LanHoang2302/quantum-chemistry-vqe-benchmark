@@ -1,0 +1,160 @@
+{
+  "stats": [
+    {
+      "mapper": "jw",
+      "num_qubits": 4,
+      "num_pauli_terms": 15
+    },
+    {
+      "mapper": "parity",
+      "num_qubits": 2,
+      "num_pauli_terms": 5
+    }
+  ],
+  "sample_pauli_terms": {
+    "jw": [
+      {
+        "pauli": "IIII",
+        "coefficient": {
+          "real": -0.8105479805373276,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "IIIZ",
+        "coefficient": {
+          "real": 0.17218393261915566,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "IIZI",
+        "coefficient": {
+          "real": -0.22575349222402383,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "IIZZ",
+        "coefficient": {
+          "real": 0.12091263261776625,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "IZII",
+        "coefficient": {
+          "real": 0.17218393261915566,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "IZIZ",
+        "coefficient": {
+          "real": 0.16892753870087904,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "ZIII",
+        "coefficient": {
+          "real": -0.22575349222402383,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "ZIIZ",
+        "coefficient": {
+          "real": 0.1661454325638241,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "YYYY",
+        "coefficient": {
+          "real": 0.04523279994605786,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "XXYY",
+        "coefficient": {
+          "real": 0.04523279994605786,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "YYXX",
+        "coefficient": {
+          "real": 0.04523279994605786,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "XXXX",
+        "coefficient": {
+          "real": 0.04523279994605786,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "IZZI",
+        "coefficient": {
+          "real": 0.1661454325638241,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "ZIZI",
+        "coefficient": {
+          "real": 0.17464343068300442,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "ZZII",
+        "coefficient": {
+          "real": 0.12091263261776625,
+          "imag": 0.0
+        }
+      }
+    ],
+    "parity": [
+      {
+        "pauli": "II",
+        "coefficient": {
+          "real": -1.0523732457728596,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "IZ",
+        "coefficient": {
+          "real": 0.39793742484317934,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "ZI",
+        "coefficient": {
+          "real": -0.39793742484317934,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "ZZ",
+        "coefficient": {
+          "real": -0.01128010425623524,
+          "imag": 0.0
+        }
+      },
+      {
+        "pauli": "XX",
+        "coefficient": {
+          "real": 0.18093119978423144,
+          "imag": 0.0
+        }
+      }
+    ]
+  }
+}

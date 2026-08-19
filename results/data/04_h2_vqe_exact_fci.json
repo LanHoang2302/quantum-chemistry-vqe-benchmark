@@ -1,0 +1,60 @@
+{
+  "molecule": "H2",
+  "bond_length": 0.735,
+  "mapper": "parity",
+  "optimizer": "slsqp",
+  "hf_total_energy": -1.1169989967540035,
+  "pyscf_full_fci_total_energy": -1.1373060357534004,
+  "pyscf_matched_reference_method": "PySCF full-space FCI",
+  "pyscf_matched_reference_total_energy": -1.1373060357534004,
+  "qiskit_exact_total_energy": -1.1373060357533986,
+  "vqe_total_energy": -1.1373060356958713,
+  "vqe_minus_qiskit_exact_mHa": 5.752731624397711e-08,
+  "matched_reference_minus_qiskit_exact_mHa": -1.7763568394002505e-12,
+  "vqe_elapsed_seconds": 1.18257722601993,
+  "vqe_evaluations": 10,
+  "vqe_num_parameters": 3,
+  "convergence": [
+    {
+      "eval": 1.0,
+      "energy": -1.836967991202983
+    },
+    {
+      "eval": 2.0,
+      "energy": -1.8369679912029835
+    },
+    {
+      "eval": 3.0,
+      "energy": -1.8369679912029828
+    },
+    {
+      "eval": 4.0,
+      "energy": -1.8369679858108126
+    },
+    {
+      "eval": 5.0,
+      "energy": -1.757286607068248
+    },
+    {
+      "eval": 6.0,
+      "energy": -1.8572741956295908
+    },
+    {
+      "eval": 7.0,
+      "energy": -1.8572741956295902
+    },
+    {
+      "eval": 8.0,
+      "energy": -1.8572741956295906
+    },
+    {
+      "eval": 9.0,
+      "energy": -1.857274195664375
+    },
+    {
+      "eval": 10.0,
+      "energy": -1.8572750301448508
+    }
+  ],
+  "note": "When an active space is requested, the matched PySCF reference is CASCI (FCI inside that active space); full-space PySCF FCI is also retained separately."
+}

@@ -1,0 +1,26 @@
+{
+  "molecule": "H2",
+  "exact_total_energy": -1.137306035753399,
+  "ideal_vqe_total_energy": -1.1373060356958713,
+  "ideal_vqe_error_mHa": 5.752776033318696e-08,
+  "noisy_vqe": {
+    "total_energy": -1.0942591393752221,
+    "error_vs_exact_mHa": 43.04689637817694,
+    "one_qubit_error": 0.001,
+    "two_qubit_error": 0.01,
+    "shots_precision_proxy": 4096,
+    "optimizer": "SPSA",
+    "evaluations": 351,
+    "elapsed_seconds": 3.3917690310045145
+  },
+  "adapt_vqe": {
+    "total_energy": -1.137306035695961,
+    "error_vs_exact_mHa": 5.743805431279725e-08,
+    "elapsed_seconds": 1.0021513220272027,
+    "extra": {
+      "num_iterations": 2,
+      "final_max_gradient": -1.9365861600006973e-05,
+      "termination_criterion": "Aborted due to a cyclic selection of evolution operators"
+    }
+  }
+}

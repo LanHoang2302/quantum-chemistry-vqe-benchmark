@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quantum-chemistry-vqe-benchmark"
+version = "0.1.0"
+description = "Electronic-structure, fermion-to-qubit mapping, VQE/UCCSD, PES, optimizer and noise benchmarks with PySCF and Qiskit Nature."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+  "qiskit==2.5.1",
+  "qiskit-nature==0.8.0",
+  "qiskit-algorithms==0.4.0",
+  "qiskit-aer==0.17.2",
+  "pyscf==2.14.0",
+  "numpy>=1.26,<3",
+  "scipy>=1.12,<2",
+  "pandas>=2.1,<3",
+  "matplotlib>=3.8,<4",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+qchem-vqe = "qchem_vqe.cli:main"

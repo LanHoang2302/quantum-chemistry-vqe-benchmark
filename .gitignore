@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+*.egg-info/
+build/
+dist/
+results/data/*.csv
+results/data/*.json
+results/figures/*.png
+!results/data/.gitkeep
+!results/figures/.gitkeep
+
+# Include generated results for this portfolio commit
+!results/data/*.csv
+!results/data/*.json
+!results/figures/*.png
+!report/

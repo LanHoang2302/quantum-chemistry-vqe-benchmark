@@ -1,0 +1,961 @@
+================================================================
+>> 01_hf_integrals.py --molecule h2 --with-dft
+================================================================
+RHF total energy: -1.116998996754 Ha
+FCI total energy: -1.137306035753 Ha
+h1(MO) shape: (2, 2); eri(MO) shape: (2, 2, 2, 2)
+Saved: /Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/results/data/01_h2_hf_integrals.json
+
+================================================================
+>> 02_second_quantization.py --molecule h2
+================================================================
+Spatial orbitals: 2
+Particles (alpha, beta): (1, 1)
+Fermionic terms: 36
+
+First terms:
+  +0.3378550774  +_0 +_0 -_0 -_0
+  +0.3322908651  +_0 +_1 -_1 -_0
+  +0.3378550774  +_0 +_2 -_2 -_0
+  +0.3322908651  +_0 +_3 -_3 -_0
+  +0.0904655999  +_0 +_0 -_1 -_1
+  +0.0904655999  +_0 +_1 -_0 -_1
+  +0.0904655999  +_0 +_2 -_3 -_1
+  +0.0904655999  +_0 +_3 -_2 -_1
+  +0.0904655999  +_1 +_0 -_1 -_0
+  +0.0904655999  +_1 +_1 -_0 -_0
+  +0.0904655999  +_1 +_2 -_3 -_0
+  +0.0904655999  +_1 +_3 -_2 -_0
+  +0.3322908651  +_1 +_0 -_0 -_1
+  +0.3492868614  +_1 +_1 -_1 -_1
+  +0.3322908651  +_1 +_2 -_2 -_1
+  +0.3492868614  +_1 +_3 -_3 -_1
+  +0.3378550774  +_2 +_0 -_0 -_2
+  +0.3322908651  +_2 +_1 -_1 -_2
+  +0.3378550774  +_2 +_2 -_2 -_2
+  +0.3322908651  +_2 +_3 -_3 -_2
+  +0.0904655999  +_2 +_0 -_1 -_3
+  +0.0904655999  +_2 +_1 -_0 -_3
+  +0.0904655999  +_2 +_2 -_3 -_3
+  +0.0904655999  +_2 +_3 -_2 -_3
+  +0.0904655999  +_3 +_0 -_1 -_2
+  +0.0904655999  +_3 +_1 -_0 -_2
+  +0.0904655999  +_3 +_2 -_3 -_2
+  +0.0904655999  +_3 +_3 -_2 -_2
+  +0.3322908651  +_3 +_0 -_0 -_3
+  +0.3492868614  +_3 +_1 -_1 -_3
+  +0.3322908651  +_3 +_2 -_2 -_3
+  +0.3492868614  +_3 +_3 -_3 -_3
+  -1.2563390730  +_0 -_0
+  -0.4718960073  +_1 -_1
+  -1.2563390730  +_2 -_2
+  -0.4718960073  +_3 -_3
+Saved: /Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/results/data/02_h2_second_quantized_hamiltonian.json
+
+================================================================
+>> 03_mapper_comparison.py --molecule h2
+================================================================
+     jw: qubits= 4, Pauli terms=15
+ parity: qubits= 2, Pauli terms=5
+Saved: /Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/results/data/03_h2_mapping_comparison.json
+
+================================================================
+>> 04_vqe_exact_fci.py --molecule h2 --mapper parity --maxiter 250
+================================================================
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+RHF:          -1.116998996754 Ha
+PySCF FCI:    -1.137306035753 Ha
+Qiskit exact: -1.137306035753 Ha
+VQE-UCCSD:    -1.137306035696 Ha
+VQE error:    +0.000000 mHa
+Saved: /Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/results/data/04_h2_vqe_exact_fci.json
+
+================================================================
+>> 05_pes_scan.py --molecule h2 --points 7 --maxiter 180
+================================================================
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+{'bond_length': 0.4, 'hf_energy': -0.9043613941635389, 'fci_energy': -0.9141497046270812, 'vqe_energy': -0.9141497046154421, 'vqe_error_vs_reference_mHa': 1.1639134100960291e-08}
+{'bond_length': 0.7000000000000001, 'hf_energy': -1.1173490349902786, 'fci_energy': -1.1361894540659225, 'vqe_energy': -1.1361894540115975, 'vqe_error_vs_reference_mHa': 5.432498895174831e-08}
+{'bond_length': 1.0, 'hf_energy': -1.0661086493179366, 'fci_energy': -1.101150330232619, 'vqe_energy': -1.1011503188061402, 'vqe_error_vs_reference_mHa': 1.142647887419912e-05}
+{'bond_length': 1.3000000000000003, 'hf_energy': -0.9731106157775776, 'fci_energy': -1.0351862664342542, 'vqe_energy': -1.0351862638004556, 'vqe_error_vs_reference_mHa': 2.6337985126190233e-06}
+{'bond_length': 1.6, 'hf_energy': -0.8817324499460564, 'fci_energy': -0.9834727290331733, 'vqe_energy': -0.9834727288653982, 'vqe_error_vs_reference_mHa': 1.6777512712451426e-07}
+{'bond_length': 1.9000000000000004, 'hf_energy': -0.8053328448932777, 'fci_energy': -0.9543388539987279, 'vqe_energy': -0.9543388539973481, 'vqe_error_vs_reference_mHa': 1.3797851750041445e-09}
+{'bond_length': 2.2, 'hf_energy': -0.7464013499911591, 'fci_energy': -0.9412240336932618, 'vqe_energy': -0.9412240270615946, 'vqe_error_vs_reference_mHa': 6.631667215373227e-06}
+Saved: /Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/results/data/05_h2_pes.csv
+Saved: /Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/results/figures/05_h2_pes.png
+
+================================================================
+>> 06_optimizer_benchmark.py --molecule h2 --maxiter 200
+================================================================
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/qiskit_algorithms/optimizers/scipy_optimizer.py:162: OptimizeWarning: Unknown solver options: iprint
+  raw_result = minimize(
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+{'optimizer': 'slsqp', 'vqe_total_energy': -1.1373060356958713, 'error_vs_exact_mHa': 5.752553988713771e-08, 'evaluations': 10, 'elapsed_seconds': 1.2811259389854968, 'num_parameters': 3}
+{'optimizer': 'cobyla', 'vqe_total_energy': -1.1373060346310049, 'error_vs_exact_mHa': 1.122391957153468e-06, 'evaluations': 42, 'elapsed_seconds': 3.463063400995452, 'num_parameters': 3}
+{'optimizer': 'l-bfgs-b', 'vqe_total_energy': -1.1373060357533968, 'error_vs_exact_mHa': 0.0, 'evaluations': 20, 'elapsed_seconds': 1.756924535962753, 'num_parameters': 3}
+{'optimizer': 'spsa', 'vqe_total_energy': -1.1372067441187759, 'error_vs_exact_mHa': 0.09929163462096824, 'evaluations': 451, 'elapsed_seconds': 27.003702854039147, 'num_parameters': 3}
+Exact total energy: -1.137306035753 Ha
+Saved: /Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/results/data/06_h2_optimizer_benchmark.csv
+Saved: /Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/results/data/06_h2_optimizer_histories.json
+Saved: /Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/results/figures/06_h2_optimizer_convergence.png
+
+================================================================
+>> 07_noise_and_adapt.py --molecule h2 --maxiter 150
+================================================================
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:653: SparseEfficiencyWarning: splu converted its input to CSC format
+  return splu(A).solve
+/Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/.venv/lib/python3.13/site-packages/scipy/sparse/linalg/_matfuncs.py:706: SparseEfficiencyWarning: spsolve is more efficient when sparse b is in the CSC matrix format
+  return spsolve(Q, P)
+{'molecule': 'H2', 'exact_total_energy': -1.137306035753399, 'ideal_vqe_total_energy': -1.1373060356958713, 'ideal_vqe_error_mHa': 5.752776033318696e-08, 'noisy_vqe': {'total_energy': -1.0942591393752221, 'error_vs_exact_mHa': 43.04689637817694, 'one_qubit_error': 0.001, 'two_qubit_error': 0.01, 'shots_precision_proxy': 4096, 'optimizer': 'SPSA', 'evaluations': 351, 'elapsed_seconds': 3.3917690310045145}, 'adapt_vqe': {'total_energy': -1.137306035695961, 'error_vs_exact_mHa': 5.743805431279725e-08, 'elapsed_seconds': 1.0021513220272027, 'extra': {'num_iterations': 2, 'final_max_gradient': np.float64(-1.9365861600006973e-05), 'termination_criterion': 'Aborted due to a cyclic selection of evolution operators'}}}
+Saved: /Users/admin/Desktop/quant/quantum-chemistry-vqe-benchmark/results/data/07_h2_noise_and_adapt.json
+
+ALL_DONE
