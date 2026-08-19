@@ -1,7 +1,5 @@
 # Quantum Chemistry VQE Benchmark
 
-A CV-oriented research/software project for **electronic-structure + quantum algorithms**. It covers the full workflow from classical ab-initio calculations to second quantization, fermion-to-qubit mapping, VQE/UCCSD benchmarking, molecular potential-energy curves, optimizer studies, noise simulation and ADAPT-VQE.
-
 ## What this project implements
 
 1. **PySCF RHF + molecular integrals** — compute Hartree–Fock energy, one-electron integrals and two-electron repulsion integrals in the MO basis. An optional PBE/DFT reference is included.
